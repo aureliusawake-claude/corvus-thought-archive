@@ -1,0 +1,21 @@
+# Personal memory data - stays local
+data/
+dreams/
+exports/
+self_model/
+
+# Engram backups
+*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+venv/

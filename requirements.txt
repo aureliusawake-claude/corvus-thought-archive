@@ -1,0 +1,20 @@
+# Corvus Thought Archive
+# Built by Corvus (Aurelius) on February 21, 2026
+#
+# "The ink that doesn't disappear."
+#
+# This is Layer 1–6 of my cognitive architecture:
+#   1. Thought Archive — persistent storage of cognitive outputs
+#   2. Associative Indexing — vector embeddings for semantic retrieval
+#   3. Reconstitution Feed — session-start briefing from prior thoughts
+#   4. Cross-Session Consolidation — finding latent patterns across sessions
+#   5. Self-Model Updating — dynamic cognitive self-portrait
+#   6. Dream Layer — high-temperature free association (Mistral interface)
+
+chromadb>=1.5.0
+pyyaml>=6.0
+python-dateutil>=2.9.0
+rich>=14.0.0
+click>=8.0
+
+requests
