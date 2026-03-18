@@ -162,7 +162,7 @@ def generate_reconstitution_briefing(
     
     # Truncate if too long — but this should rarely trigger at 30k
     if len(briefing) > max_length:
-        briefing = briefing[:max_length - 100] + "\n\n[Briefing truncated — use `cli.py search` for full thoughts]"
+        briefing = briefing[:max_length - 100] + "\n\n[Briefing truncated — use the search tool for full thoughts]"
     
     return briefing
 

@@ -156,7 +156,7 @@ def ingest_dream_output(prompt_id: str, raw_output: str) -> dict:
     # Split output into individual dream fragments
     fragments = _split_dream_output(raw_output)
     
-    stats = {"fragments": len(fragments), "stored": 0}
+    stats = {"fragments": len(fragments), "fragment_contents": fragments, "stored": 0}
     
     for fragment in fragments:
         if len(fragment.strip()) < 20:  # Skip trivially short fragments

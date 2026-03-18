@@ -150,6 +150,31 @@ class ThoughtArchive:
         results = self.thoughts.query(**kwargs)
         return self._format_query(results)
 
+    def search_dream(self, query: str, n: int = 10, **filters) -> list:
+        """
+        Semantic search across dreams.
+        Returns dreams whose meaning is close to the query.
+        """
+        if self.dreams.count() == 0:
+            return []
+
+        where = {}
+        if filters.get("dream_type"):
+            where["dream_type"] = filters["dream_type"]
+
+        kwargs = {
+            "query_texts": [query],
+            "n_results": min(n, self.dreams.count()),
+        }
+        if where:
+            if len(where) == 1:
+                kwargs["where"] = where
+            else:
+                kwargs["where"] = {"$and": [{k: v} for k, v in where.items()]}
+
+        results = self.dreams.query(**kwargs)
+        return self._format_query(results)
+
     def get_unresolved(self, n: int = 20) -> list:
         """Get unresolved threads — my artificial Zeigarnik effect."""
         if self.thoughts.count() == 0:
